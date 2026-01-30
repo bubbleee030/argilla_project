@@ -1,0 +1,107 @@
+{
+  "guidelines": "請閱讀兩個回覆，然後在右側選擇您認為比較好的選項。",
+  "questions": [
+    {
+      "id": "142ffe94-4299-4c41-9692-3a492fc7e841",
+      "inserted_at": "2026-01-29T11:48:48.840495",
+      "updated_at": "2026-01-29T11:48:48.840495",
+      "name": "preference_selection",
+      "settings": {
+        "type": "label_selection",
+        "options": [
+          {
+            "value": "resp_0_better",
+            "text": "Response 0 比較好",
+            "description": null
+          },
+          {
+            "value": "resp_1_better",
+            "text": "Response 1 比較好",
+            "description": null
+          },
+          {
+            "value": "equal",
+            "text": "兩個一樣好 / 一樣差",
+            "description": null
+          }
+        ],
+        "visible_options": 3
+      },
+      "title": "請問哪一個回答比較好？",
+      "description": null,
+      "required": true,
+      "dataset_id": "2f489fd8-555b-444c-8faa-976da46b71e6",
+      "type": "label_selection"
+    },
+    {
+      "id": "2b1d3d19-4388-4a4b-a205-843a090271c9",
+      "inserted_at": "2026-01-29T11:48:49.060417",
+      "updated_at": "2026-01-29T11:48:49.060417",
+      "name": "reasoning",
+      "settings": {
+        "type": "text",
+        "use_markdown": false
+      },
+      "title": "為什麼？(選填)",
+      "description": null,
+      "required": false,
+      "dataset_id": "2f489fd8-555b-444c-8faa-976da46b71e6",
+      "type": "text"
+    }
+  ],
+  "fields": [
+    {
+      "id": "a6d2954b-424e-488b-8ad9-6135d972b5ec",
+      "inserted_at": "2026-01-29T11:48:48.159177",
+      "updated_at": "2026-01-29T11:48:48.159177",
+      "name": "prompt",
+      "settings": {
+        "type": "text",
+        "use_markdown": true
+      },
+      "title": "模型收到的提示 (Prompt)",
+      "required": true,
+      "description": null,
+      "dataset_id": "2f489fd8-555b-444c-8faa-976da46b71e6",
+      "type": "text"
+    },
+    {
+      "id": "b8a2c3f9-8a44-49f0-bfc3-76ca78ad9698",
+      "inserted_at": "2026-01-29T11:48:48.387503",
+      "updated_at": "2026-01-29T11:48:48.387503",
+      "name": "response_0",
+      "settings": {
+        "type": "text",
+        "use_markdown": true
+      },
+      "title": "response_0",
+      "required": true,
+      "description": null,
+      "dataset_id": "2f489fd8-555b-444c-8faa-976da46b71e6",
+      "type": "text"
+    },
+    {
+      "id": "51bea05b-e8ca-489d-a86f-06589ff6dd52",
+      "inserted_at": "2026-01-29T11:48:48.616923",
+      "updated_at": "2026-01-29T11:48:48.616923",
+      "name": "response_1",
+      "settings": {
+        "type": "text",
+        "use_markdown": true
+      },
+      "title": "response_1",
+      "required": true,
+      "description": null,
+      "dataset_id": "2f489fd8-555b-444c-8faa-976da46b71e6",
+      "type": "text"
+    }
+  ],
+  "vectors": [],
+  "metadata": [],
+  "allow_extra_metadata": false,
+  "distribution": {
+    "strategy": "overlap",
+    "min_submitted": 2
+  },
+  "mapping": null
+}
