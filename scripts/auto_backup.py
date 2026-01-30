@@ -375,6 +375,10 @@ class ArgillaBackupManager:
             if not content_changed:
                 logger.info("⏭️  No changes detected, removing duplicate backup")
                 shutil.rmtree(backup_path)
+                
+                # Ensure latest backup exists in Git even if no changes
+                self._ensure_latest_backup_exists()
+                
                 return True  # Still considered successful
             
             # Create metadata file
@@ -470,6 +474,32 @@ class ArgillaBackupManager:
             
         except Exception as e:
             logger.warning(f"Failed to copy latest backup: {e}")
+    
+    def _ensure_latest_backup_exists(self) -> None:
+        """Ensure latest backup directory exists for Git tracking"""
+        try:
+            latest_dir = self.backup_dir / "latest"
+            
+            # If latest already exists, nothing to do
+            if latest_dir.exists():
+                logger.info("Latest backup already exists, no update needed")
+                return
+            
+            # Create latest from the most recent backup
+            backups = self.get_existing_backups()
+            if not backups:
+                logger.info("No backups found to create latest")
+                return
+            
+            latest_backup = backups[0]
+            shutil.copytree(latest_backup, latest_dir)
+            logger.info(f"✅ Created latest backup copy: latest/ <- {latest_backup.name}")
+            
+            # Commit to Git
+            self._auto_commit_to_git()
+            
+        except Exception as e:
+            logger.warning(f"Failed to ensure latest backup exists: {e}")
     
     def _auto_commit_to_git(self) -> None:
         """Auto commit and push changes to Git if in a Git repository"""
