@@ -22,6 +22,8 @@ from pathlib import Path
 from datetime import datetime
 from typing import Optional, List
 import time
+import requests
+import hashlib
 
 import argilla as rg
 
@@ -37,6 +39,108 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+class DiscordNotifier:
+    """Sends notifications to Discord webhook"""
+    
+    def __init__(self, webhook_url: Optional[str] = None):
+        """
+        Initialize Discord notifier
+        
+        Args:
+            webhook_url: Discord webhook URL (or set DISCORD_WEBHOOK_URL env var)
+        """
+        self.webhook_url = webhook_url or os.getenv('DISCORD_WEBHOOK_URL')
+        self.enabled = bool(self.webhook_url)
+    
+    def send_error(self, title: str, message: str, error_details: str = None) -> bool:
+        """
+        Send error notification to Discord
+        
+        Args:
+            title: Error title
+            message: Error message
+            error_details: Detailed error information
+        
+        Returns:
+            True if sent successfully, False otherwise
+        """
+        if not self.enabled:
+            return False
+        
+        try:
+            embed = {
+                "title": f"[ERROR] {title}",
+                "description": message,
+                "color": 15158332,
+                "fields": [
+                    {
+                        "name": "Timestamp",
+                        "value": datetime.now().isoformat(),
+                        "inline": True
+                    }
+                ],
+                "footer": {
+                    "text": "Argilla Backup Manager"
+                }
+            }
+            
+            if error_details:
+                embed["fields"].append({
+                    "name": "Details",
+                    "value": f"```{error_details[:1000]}```",
+                    "inline": False
+                })
+            
+            payload = {"embeds": [embed]}
+            
+            response = requests.post(self.webhook_url, json=payload, timeout=10)
+            return response.status_code in (200, 204)
+            
+        except Exception as e:
+            logger.error(f"Failed to send Discord notification: {e}")
+            return False
+    
+    def send_success(self, title: str, message: str) -> bool:
+        """
+        Send success notification to Discord
+        
+        Args:
+            title: Success title
+            message: Success message
+        
+        Returns:
+            True if sent successfully, False otherwise
+        """
+        if not self.enabled:
+            return False
+        
+        try:
+            embed = {
+                "title": f"[SUCCESS] {title}",
+                "description": message,
+                "color": 3066993,
+                "fields": [
+                    {
+                        "name": "Timestamp",
+                        "value": datetime.now().isoformat(),
+                        "inline": True
+                    }
+                ],
+                "footer": {
+                    "text": "Argilla Backup Manager"
+                }
+            }
+            
+            payload = {"embeds": [embed]}
+            
+            response = requests.post(self.webhook_url, json=payload, timeout=10)
+            return response.status_code in (200, 204)
+            
+        except Exception as e:
+            logger.error(f"Failed to send Discord notification: {e}")
+            return False
+
+
 class ArgillaBackupManager:
     """Manages automated backups of Argilla datasets"""
     
@@ -47,7 +151,8 @@ class ArgillaBackupManager:
         dataset_name: str,
         backup_dir: str = "./backups",
         max_backups: int = 5,
-        workspace_name: str = "argilla"
+        workspace_name: str = "argilla",
+        discord_webhook: Optional[str] = None
     ):
         """
         Initialize the backup manager
@@ -59,6 +164,7 @@ class ArgillaBackupManager:
             backup_dir: Directory to store backups
             max_backups: Maximum number of backups to keep
             workspace_name: Workspace name (default: "argilla")
+            discord_webhook: Discord webhook URL for notifications
         """
         self.api_url = api_url
         self.api_key = api_key
@@ -70,6 +176,9 @@ class ArgillaBackupManager:
         # Initialize client
         self.client = None
         self.dataset = None
+        
+        # Initialize Discord notifier
+        self.notifier = DiscordNotifier(discord_webhook)
         
     def connect(self) -> bool:
         """Connect to Argilla and load dataset"""
@@ -97,6 +206,11 @@ class ArgillaBackupManager:
             
         except Exception as e:
             logger.error(f"❌ Connection failed: {e}")
+            self.notifier.send_error(
+                "Connection Failed",
+                f"Failed to connect to Argilla at {self.api_url}",
+                str(e)
+            )
             return False
     
     def create_backup_dir(self) -> bool:
@@ -123,10 +237,76 @@ class ArgillaBackupManager:
                 key=lambda x: x.stat().st_mtime,
                 reverse=True
             )
-            return [b for b in backups if b.is_dir()]
+            # Exclude 'latest' symlink from backup list
+            return [b for b in backups if b.is_dir() and b.name != 'latest']
         except Exception as e:
             logger.error(f"Failed to list backups: {e}")
             return []
+    
+    def calculate_backup_hash(self, backup_path: Path) -> Optional[str]:
+        """Calculate hash of records data (excluding timestamps) to detect changes"""
+        try:
+            records_json = backup_path / "records.json"
+            if not records_json.exists():
+                return None
+            
+            with open(records_json, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            # Extract only the actual record data, excluding metadata with timestamps
+            # Focus on: id, fields, responses, suggestions
+            records_content = []
+            
+            if isinstance(data, list):
+                for record in data:
+                    # Create a filtered version without timestamp fields
+                    filtered_record = {
+                        'id': record.get('id'),
+                        'fields': record.get('fields'),
+                        'responses': record.get('responses'),
+                        'suggestions': record.get('suggestions'),
+                        'status': record.get('status')
+                    }
+                    records_content.append(filtered_record)
+            
+            # Convert to JSON string with sorted keys for consistent hashing
+            content_str = json.dumps(records_content, sort_keys=True, ensure_ascii=False)
+            file_hash = hashlib.sha256(content_str.encode('utf-8')).hexdigest()
+            
+            return file_hash
+            
+        except Exception as e:
+            logger.error(f"Failed to calculate hash: {e}")
+            return None
+    
+    def has_backup_changed(self, new_backup_path: Path) -> bool:
+        """Check if backup content differs from the latest existing backup"""
+        try:
+            existing_backups = self.get_existing_backups()
+            if not existing_backups:
+                logger.info("No existing backup found, will create new backup")
+                return True
+            
+            latest_backup = existing_backups[0]
+            
+            # Calculate hashes
+            new_hash = self.calculate_backup_hash(new_backup_path)
+            old_hash = self.calculate_backup_hash(latest_backup)
+            
+            if new_hash is None or old_hash is None:
+                logger.warning("Could not calculate hash, assuming content changed")
+                return True
+            
+            if new_hash == old_hash:
+                logger.info(f"Backup content unchanged (hash: {new_hash[:16]}...)")
+                return False
+            else:
+                logger.info(f"Backup content changed (old: {old_hash[:16]}..., new: {new_hash[:16]}...)")
+                return True
+                
+        except Exception as e:
+            logger.error(f"Error checking backup changes: {e}")
+            return True  # Assume changed on error
     
     def fix_json_encoding(self, file_path: Path) -> bool:
         """Convert JSON file to UTF-8 encoding (fix Chinese characters from Unicode escapes)"""
@@ -189,6 +369,14 @@ class ArgillaBackupManager:
             if dataset_json.exists():
                 self.fix_json_encoding(dataset_json)
             
+            # Check if content has changed
+            content_changed = self.has_backup_changed(backup_path)
+            
+            if not content_changed:
+                logger.info("⏭️  No changes detected, removing duplicate backup")
+                shutil.rmtree(backup_path)
+                return True  # Still considered successful
+            
             # Create metadata file
             metadata = {
                 'timestamp': datetime.now().isoformat(),
@@ -205,13 +393,30 @@ class ArgillaBackupManager:
                 json.dump(metadata, f, ensure_ascii=False, indent=2)
             
             logger.info(f"Metadata saved to {metadata_path}")
+            
+            # Update latest backup copy for Git tracking
+            self._update_latest_backup_copy()
+            
+            # Auto commit to Git if enabled
+            self._auto_commit_to_git()
+            
             return True
             
         except FileExistsError as e:
             logger.error(f"❌ Directory already exists: {e}")
+            self.notifier.send_error(
+                "Backup Directory Error",
+                f"Directory already exists: {backup_path}",
+                str(e)
+            )
             return False
         except Exception as e:
             logger.error(f"❌ Backup failed: {e}")
+            self.notifier.send_error(
+                "Backup Failed",
+                f"Failed to backup dataset: {self.dataset_name}",
+                str(e)
+            )
             # Clean up partial backup
             if backup_path.exists():
                 shutil.rmtree(backup_path)
@@ -238,7 +443,91 @@ class ArgillaBackupManager:
             
         except Exception as e:
             logger.error(f"Backup rotation failed: {e}")
+            self.notifier.send_error(
+                "Rotation Failed",
+                "Failed to rotate old backups",
+                str(e)
+            )
             return False
+    
+    def _update_latest_backup_copy(self) -> None:
+        """Copy latest backup to 'latest' directory for Git tracking"""
+        try:
+            backups = self.get_existing_backups()
+            if not backups:
+                return
+            
+            latest_backup = backups[0]
+            latest_dir = self.backup_dir / "latest"
+            
+            # Remove existing latest directory if it exists
+            if latest_dir.exists():
+                shutil.rmtree(latest_dir)
+            
+            # Copy the latest backup to 'latest' directory
+            shutil.copytree(latest_backup, latest_dir)
+            logger.info(f"✅ Updated latest backup copy: latest/ <- {latest_backup.name}")
+            
+        except Exception as e:
+            logger.warning(f"Failed to copy latest backup: {e}")
+    
+    def _auto_commit_to_git(self) -> None:
+        """Auto commit and push changes to Git if in a Git repository"""
+        try:
+            import subprocess
+            
+            # Check if we're in a Git repository
+            result = subprocess.run(
+                ['git', 'rev-parse', '--git-dir'],
+                cwd=self.backup_dir.parent,
+                capture_output=True,
+                text=True
+            )
+            
+            if result.returncode != 0:
+                logger.info("Not in a Git repository, skipping auto-commit")
+                return
+            
+            # Check if there are changes to commit
+            result = subprocess.run(
+                ['git', 'status', '--porcelain', 'backups/latest'],
+                cwd=self.backup_dir.parent,
+                capture_output=True,
+                text=True
+            )
+            
+            if not result.stdout.strip():
+                logger.info("No Git changes detected, skipping commit")
+                return
+            
+            # Add the latest backup directory
+            subprocess.run(
+                ['git', 'add', 'backups/latest'],
+                cwd=self.backup_dir.parent,
+                check=True
+            )
+            
+            # Commit with timestamp
+            commit_msg = f"Backup updated: {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+            subprocess.run(
+                ['git', 'commit', '-m', commit_msg],
+                cwd=self.backup_dir.parent,
+                check=True
+            )
+            
+            # Push to remote
+            subprocess.run(
+                ['git', 'push'],
+                cwd=self.backup_dir.parent,
+                check=True
+            )
+            
+            logger.info(f"✅ Auto-committed and pushed to Git: {commit_msg}")
+            
+        except subprocess.CalledProcessError as e:
+            logger.warning(f"Git operation failed: {e}")
+        except Exception as e:
+            logger.warning(f"Failed to auto-commit to Git: {e}")
     
     def run_backup_cycle(self) -> bool:
         """Run complete backup cycle: connect, backup, rotate"""
@@ -265,6 +554,15 @@ class ArgillaBackupManager:
         logger.info("=" * 70)
         logger.info("✅ BACKUP CYCLE COMPLETED SUCCESSFULLY")
         logger.info("=" * 70)
+        
+        # Send success notification
+        progress = self.dataset.progress(with_users_distribution=True)
+        total = progress.get('total', 0)
+        self.notifier.send_success(
+            "Backup Completed",
+            f"Successfully backed up {total} records from {self.dataset_name}"
+        )
+        
         return True
     
     def list_backups(self) -> None:
@@ -342,7 +640,7 @@ def main():
     )
     parser.add_argument(
         '--api-key',
-        default=os.getenv('ARGILLA_API_KEY'),
+        default=os.getenv('ARGILLA_API_KEY', '0KQy1XjHdNK35xRz4Tk6AQZ8lrw1TB8EEo8VCubfSa4JQnWhn50jBSwE44gTCvWSv7QBdYzRDaNcEzpPuoSjQ4Erf47sMk31b5GnT1DkqvM'),
         help='Argilla API key (or set ARGILLA_API_KEY env var)'
     )
     parser.add_argument(
@@ -381,6 +679,16 @@ def main():
         action='store_true',
         help='List all existing backups'
     )
+    parser.add_argument(
+        '--discord-webhook',
+        default=os.getenv('DISCORD_WEBHOOK_URL'),
+        help='Discord webhook URL for error notifications (or set DISCORD_WEBHOOK_URL env var)'
+    )
+    parser.add_argument(
+        '--test-webhook',
+        action='store_true',
+        help='Test Discord webhook connection without running backup'
+    )
     
     args = parser.parse_args()
     
@@ -394,11 +702,32 @@ def main():
         dataset_name=args.dataset,
         backup_dir=args.backup_dir,
         max_backups=args.max_backups,
-        workspace_name=args.workspace
+        workspace_name=args.workspace,
+        discord_webhook=args.discord_webhook
     )
     
     # Execute requested action
-    if args.list:
+    if args.test_webhook:
+        # Test Discord webhook
+        notifier = DiscordNotifier(args.discord_webhook)
+        if not notifier.enabled:
+            logger.error("Discord webhook not configured. Use --discord-webhook or set DISCORD_WEBHOOK_URL env var")
+            exit(1)
+        
+        logger.info("Testing Discord webhook connection...")
+        success = notifier.send_error(
+            "Test Connection",
+            "This is a test notification from Argilla Backup Manager",
+            "If you see this message, your webhook is correctly configured!"
+        )
+        
+        if success:
+            logger.info("✅ Discord webhook test successful!")
+            exit(0)
+        else:
+            logger.error("❌ Failed to send test notification")
+            exit(1)
+    elif args.list:
         backup_manager.list_backups()
     elif args.schedule:
         schedule_backups(backup_manager, args.schedule)

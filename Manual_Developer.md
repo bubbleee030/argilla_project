@@ -268,3 +268,104 @@ with open(output_path, 'w', encoding='utf-8') as f:
 
 print(f"資料已儲存至: {output_path}")
 ```
+
+---
+
+## 8. 自動備份系統 (Auto Backup System)
+
+為了保護資料免於 HF Spaces 36 小時休眠/刪除機制，我們建立了自動備份系統。
+
+### 8.1 備份特點
+
+- **智慧內容偵測**：只在資料真的改變時才建立備份（忽略時間戳記）
+- **Discord 通知**：備份失敗或完成時即時通知
+- **自動 Git 同步**：每次有變化時自動上傳到 Git
+- **備份輪轉**：保留最近 5 個備份，自動刪除舊的
+- **錯誤恢復**：失敗時自動清理無用檔案
+
+### 8.2 快速開始
+
+```bash
+# 一次性備份
+python scripts/auto_backup.py --once
+
+# 測試 Discord webhook（可選）
+python scripts/auto_backup.py --test-webhook
+
+# 排程備份（每 2 小時一次）
+python scripts/auto_backup.py --schedule 120
+
+# 列出所有備份
+python scripts/auto_backup.py --list
+```
+
+### 8.3 Discord 通知設定
+
+```bash
+# 設定環境變數
+export DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/YOUR_ID/YOUR_TOKEN"
+
+# 或永久設定到 ~/.bashrc
+echo 'export DISCORD_WEBHOOK_URL="..."' >> ~/.bashrc
+```
+
+### 8.4 備份恢復
+
+如果誤刪本機備份：
+
+```bash
+# 從 Git 拉回最新備份
+git pull
+
+# 查看備份歷史
+git log --oneline backups/latest | head -10
+
+# 檢查備份狀態
+cat backups/latest/backup_metadata.json
+```
+
+### 8.5 備份存儲結構
+
+```
+backups/
+├── latest/                    # Git 追蹤的最新備份副本
+├── 模型回答偏好選擇_整合_20260130_140000/  # 本機備份（不在 Git）
+├── 模型回答偏好選擇_整合_20260130_120000/
+└── ...
+```
+
+只有 `latest/` 資料夾會進入 Git，舊備份留在本機供手動復原使用。
+
+---
+
+## 9. 監控與維護 (Monitoring & Maintenance)
+
+### 9.1 檢查備份日誌
+
+```bash
+# 檢視最後 50 行日誌
+tail -50 auto_backup.log
+
+# 即時監控
+tail -f auto_backup.log
+
+# 查詢錯誤
+grep "❌\|ERROR" auto_backup.log
+```
+
+### 9.2 檢查磁碟空間
+
+```bash
+# 本機備份大小
+du -sh backups/
+
+# Git 儲存庫大小
+du -sh .git/
+```
+
+### 9.3 定期清理
+
+```bash
+# 腳本自動執行輪轉，但可手動刪除舊備份
+rm -rf backups/模型回答偏好選擇_整合_20260101_*
+```

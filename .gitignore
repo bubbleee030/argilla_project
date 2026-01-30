@@ -1,0 +1,19 @@
+# Ignore all backups except the latest
+backups/*
+!backups/latest/
+
+# Ignore log files
+auto_backup.log
+scripts/auto_backup.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/

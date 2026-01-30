@@ -5,23 +5,29 @@
 ```bash
 cd /home/ubuntu/argilla_project
 
-# 1. Install APScheduler (if not already installed)
-pip install apscheduler
+# 1. Install dependencies
+pip install apscheduler requests
 
-# 2. Copy template env file
+# 2. Copy template env file (Traditional way)
 cp .env.template .env
 
 # 3. Edit .env with your credentials
 nano .env
 
-# 4. Run backup once
+# 4. (Optional) Set up Discord webhook for notifications
+export DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/YOUR_ID/YOUR_TOKEN"
+
+# 5. Test Discord webhook (optional)
+python3 scripts/auto_backup.py --test-webhook
+
+# 6. Run backup once
 python3 scripts/auto_backup.py --once
 
-# 5. Schedule automatic backups every 2 hours via tmux
+# 7. Schedule automatic backups every 2 hours via tmux
 tmux
 python3 scripts/auto_backup.py --schedule 120 
 
-# 6. List backups anytime
+# 8. List backups anytime
 python3 scripts/auto_backup.py --list
 ```
 
@@ -36,14 +42,14 @@ cd /home/ubuntu/argilla_project
 ### Step 2: Install Dependencies
 
 ```bash
-# Install APScheduler for scheduling
-pip install apscheduler
-
-# Or if using conda
-conda install apscheduler
+# Install required packages
+pip install apscheduler requests
 ```
 
-### Step 3: Configure Credentials
+APScheduler: For scheduling backups
+requests: For Discord webhook notifications
+
+### Step 3: Configure Credentials (Traditional Method)
 
 ```bash
 # Copy the template
@@ -59,7 +65,35 @@ ARGILLA_API_URL=https://bubble030-test-argilla.hf.space
 ARGILLA_API_KEY=your_actual_api_key_here
 ```
 
-### Step 4: Test the Backup
+### Step 4: (Optional) Configure Discord Notifications
+
+Discord notifications alert you immediately when backups fail.
+
+```bash
+# Get Discord webhook URL
+# 1. Create Discord server and channel
+# 2. Right-click channel → Edit → Integrations → Webhooks → New Webhook
+# 3. Copy the webhook URL
+
+# Set environment variable
+export DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/YOUR_ID/YOUR_TOKEN"
+
+# Or add to ~/.bashrc for persistent setting
+echo 'export DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/YOUR_ID/YOUR_TOKEN"' >> ~/.bashrc
+```
+
+**Test your webhook:**
+```bash
+python3 scripts/auto_backup.py --test-webhook
+```
+
+Expected output if successful:
+```
+INFO - Testing Discord webhook connection...
+✅ Discord webhook test successful!
+```
+
+### Step 5: Test the Backup
 
 ```bash
 # Run backup once to verify it works
@@ -76,7 +110,44 @@ python3 scripts/auto_backup.py --once
 2025-01-29 15:00:15 - root - INFO - ✅ BACKUP CYCLE COMPLETED SUCCESSFULLY
 ```
 
-### Step 5: Schedule Automatic Backups
+### Step 5: Test the Backup
+
+```bash
+# Run backup once to verify it works
+python3 scripts/auto_backup.py --once
+```
+
+**Expected output:**
+```
+2025-01-29 15:00:00 - root - INFO - STARTING BACKUP CYCLE
+2025-01-29 15:00:00 - root - INFO - Connecting to Argilla...
+2025-01-29 15:00:05 - root - INFO - ✅ Connected successfully
+2025-01-29 15:00:05 - root - INFO - Starting backup...
+2025-01-29 15:00:15 - root - INFO - ✅ Backup completed successfully
+2025-01-29 15:00:15 - root - INFO - ✅ BACKUP CYCLE COMPLETED SUCCESSFULLY
+```
+
+### Step 6: Understanding Smart Backup Detection
+
+The script is intelligent about backups:
+
+```
+Scenario 1: First backup
+→ Creates backup ✅
+→ Uploads to Git automatically ✅
+
+Scenario 2: Same data after 2 hours
+→ Calculates hash of actual data (ignoring timestamps)
+→ Detects no changes
+→ ⏭️  Skips backup (no storage used)
+
+Scenario 3: New annotations added
+→ Detects content changed
+→ Creates new backup ✅
+→ Updates Git automatically ✅
+```
+
+### Step 7: Schedule Automatic Backups
 
 Choose your backup interval:
 
@@ -129,13 +200,26 @@ python3 scripts/auto_backup.py --list
 ### View Backup Metadata
 
 ```bash
-cat ./backups/模型回答偏好選擇_整合_20250129_150000/backup_metadata.json
+cat ./backups/latest/backup_metadata.json
+```
+
+### View Git Backup Status
+
+```bash
+# Check what's in latest backup (tracked by Git)
+git status backups/latest
+
+# View commit history of backups
+git log --oneline backups/latest | head -10
+
+# Restore backup from Git if accidentally deleted locally
+git pull
 ```
 
 ### Check Backup Size
 
 ```bash
-du -sh ./backups/*/
+du -sh ./backups/latest/
 ```
 
 ### Monitor Backup Logs
@@ -149,23 +233,29 @@ tail -f auto_backup.log
 
 # Count number of successful backups
 grep "✅ BACKUP CYCLE COMPLETED" auto_backup.log | wc -l
+
+# Check for errors
+grep "❌\|ERROR" auto_backup.log
 ```
 
-## Storage Location
+## Storage Location & Git Integration
 
 All backups are stored in: `/home/ubuntu/argilla_project/backups/`
 
 ```
 backups/
-├── 模型回答偏好選擇_整合_20250129_150000/
-│   ├── records.json              (800 records ~45 MB)
-│   ├── backup_metadata.json      (metadata)
+├── latest/                          (tracked by Git - real backup copy)
+│   ├── records.json                 (most recent data)
+│   ├── backup_metadata.json
 │   └── .argilla/
 │       ├── settings.json
 │       └── dataset.json
+├── 模型回答偏好選擇_整合_20250129_150000/  (local backup, not in Git)
+│   ├── records.json
+│   └── backup_metadata.json
 ├── 模型回答偏好選擇_整合_20250129_120000/
 │   ├── records.json
-│   ├── backup_metadata.json
+│   └── backup_metadata.json
 │   └── .argilla/
 │
 └── ... (older backups)
