@@ -253,8 +253,7 @@ class ArgillaBackupManager:
             with open(records_json, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             
-            # Extract only the actual record data, excluding metadata with timestamps
-            # Focus on: id, fields, responses, suggestions
+            # Extract only the actual record data, excluding timestamps
             records_content = []
             
             if isinstance(data, list):
@@ -263,10 +262,40 @@ class ArgillaBackupManager:
                     filtered_record = {
                         'id': record.get('id'),
                         'fields': record.get('fields'),
-                        'responses': record.get('responses'),
-                        'suggestions': record.get('suggestions'),
                         'status': record.get('status')
                     }
+                    
+                    # Process responses - keep only the actual response values, not timestamps
+                    responses = record.get('responses', [])
+                    if responses:
+                        filtered_responses = []
+                        for resp in responses:
+                            if isinstance(resp, dict):
+                                # Extract only the answer value, not metadata
+                                filtered_resp = {
+                                    'value': resp.get('value'),
+                                    'status': resp.get('status')
+                                }
+                                filtered_responses.append(filtered_resp)
+                            else:
+                                filtered_responses.append(resp)
+                        filtered_record['responses'] = filtered_responses
+                    
+                    # Process suggestions similarly
+                    suggestions = record.get('suggestions', [])
+                    if suggestions:
+                        filtered_suggestions = []
+                        for sug in suggestions:
+                            if isinstance(sug, dict):
+                                filtered_sug = {
+                                    'value': sug.get('value'),
+                                    'type': sug.get('type')
+                                }
+                                filtered_suggestions.append(filtered_sug)
+                            else:
+                                filtered_suggestions.append(sug)
+                        filtered_record['suggestions'] = filtered_suggestions
+                    
                     records_content.append(filtered_record)
             
             # Convert to JSON string with sorted keys for consistent hashing
@@ -280,14 +309,29 @@ class ArgillaBackupManager:
             return None
     
     def has_backup_changed(self, new_backup_path: Path) -> bool:
-        """Check if backup content differs from the latest existing backup"""
+        """Check if backup content differs from the latest existing backup
+        
+        NOTE: This method is deprecated. Use direct hash comparison in backup_dataset() instead.
+        This method has a bug where it compares the new backup with itself if called after creation.
+        """
         try:
             existing_backups = self.get_existing_backups()
             if not existing_backups:
                 logger.info("No existing backup found, will create new backup")
                 return True
             
-            latest_backup = existing_backups[0]
+            # Skip the most recent backup if it has the same timestamp as new backup
+            # to avoid comparing new backup with itself
+            latest_backup = None
+            for backup in existing_backups:
+                # Compare by directory name to avoid using the newly created backup
+                if backup.name != new_backup_path.name:
+                    latest_backup = backup
+                    break
+            
+            if latest_backup is None:
+                logger.info("No previous backup found to compare with")
+                return True
             
             # Calculate hashes
             new_hash = self.calculate_backup_hash(new_backup_path)
@@ -332,6 +376,14 @@ class ArgillaBackupManager:
             logger.error("Dataset not loaded. Call connect() first")
             return False
         
+        # IMPORTANT: Get the hash of the latest existing backup BEFORE creating new backup
+        # This avoids the bug where we compare new backup with itself
+        existing_backups = self.get_existing_backups()
+        old_hash = None
+        if existing_backups:
+            old_hash = self.calculate_backup_hash(existing_backups[0])
+            logger.info(f"Latest existing backup hash: {old_hash[:16] if old_hash else 'None'}...")
+        
         backup_path = self.get_backup_path()
         
         try:
@@ -369,13 +421,18 @@ class ArgillaBackupManager:
             if dataset_json.exists():
                 self.fix_json_encoding(dataset_json)
             
-            # Check if content has changed
-            content_changed = self.has_backup_changed(backup_path)
+            # Check if content has changed by comparing with the old hash we saved earlier
+            new_hash = self.calculate_backup_hash(backup_path)
+            content_changed = (old_hash is None or new_hash != old_hash)
+            
+            if content_changed:
+                logger.info(f"Backup content changed (old: {old_hash[:16] if old_hash else 'None'}..., new: {new_hash[:16]}...)")
+            else:
+                logger.info(f"Backup content unchanged (hash: {new_hash[:16]}...)")
             
             if not content_changed:
-                logger.info("⏭️  No changes detected, removing duplicate backup")
+                logger.info("⏭️  No changes detected, removing backup")
                 shutil.rmtree(backup_path)
-                
                 # Ensure latest backup exists in Git even if no changes
                 self._ensure_latest_backup_exists()
                 
