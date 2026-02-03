@@ -188,7 +188,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "2bd62811-541a-436b-b2b0-11055f7869fb"
@@ -300,7 +307,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "7a36e011-05a0-4c82-a2ff-05ee7e6d1b51"
@@ -440,7 +454,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "bd91f62f-06b0-4e1f-b7d2-8625bcdee9c5"
@@ -580,7 +601,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 0 使用了 %sample_response ",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "f80d0df2-95a0-4c3e-b936-9a3f6ec2e32a"
@@ -720,7 +754,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "ea400c00-31ab-41e2-aeba-847e625b0164"
@@ -937,7 +978,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "7fbfefce-3478-46ef-984a-983fbcc2ed2b"
@@ -1404,7 +1452,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "ba9bfc0f-a945-4b7d-ae91-8c647e79c191"
@@ -1710,7 +1765,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "471ab2ac-f2cd-4a8e-9b9c-3a8be2861bbd"
@@ -2265,7 +2327,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 0 有使用到 新聞稿範例(sample_response)",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "f43767bf-b695-4d22-abac-4c5114332d17"
@@ -2335,7 +2410,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "f2a019e0-8e1c-451c-ac52-36692c1f3866"
@@ -2419,7 +2501,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "1eddf3e7-f5b4-4df9-81cf-060a9c4d2f73"
@@ -2447,7 +2536,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "兩者差不多，但 Response 1 使用了 公文範例(sample_response)",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "cfd65639-2a6b-467c-b481-2677de04e495"
@@ -2758,6 +2860,10 @@
         {
           "value": "resp_0_better",
           "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        },
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
         }
       ],
       "reasoning": [
@@ -2768,7 +2874,7 @@
       ]
     },
     "vectors": {},
-    "status": "pending",
+    "status": "completed",
     "_server_id": "427f08a0-f1ed-4833-95f1-8d765beac02e"
   },
   {
@@ -2925,11 +3031,21 @@
         {
           "value": "resp_1_better",
           "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        },
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "response 0 有使用到 sample_response",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
         }
       ]
     },
     "vectors": {},
-    "status": "pending",
+    "status": "completed",
     "_server_id": "c376e189-172d-436d-8389-439f720a4349"
   },
   {
@@ -3060,7 +3176,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "fa71849e-4570-435d-944b-041388535f6e"
@@ -3242,7 +3365,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "兩者都沒有發現分項標號的錯誤，但 Response 1 評語內的分項標好誤用全形括號",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "6b65731b-43be-464e-b15f-01785efc691c"
@@ -3472,7 +3608,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "兩者都沒有發先題文不符，但 response 1 給的分數較低，且有指出部適當之處",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "fbb1e32c-7657-468c-af52-2814531b3758"
@@ -3724,7 +3873,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "5fa5b44d-dd21-4ce2-8b02-97c0a8fbd908"
@@ -4215,7 +4371,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 0 的 \"雖然沒有直接引用發言者原話，但新聞稿的內容仍然符合新聞稿書寫原則\" 較為正確",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "86e3866d-ac84-4398-b3bc-3594a4a73e15"
@@ -4471,7 +4640,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 0 使用了  %sample_response",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "f0ab0b9f-69f6-4c86-b706-052f960713dc"
@@ -4499,7 +4681,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "001845b0-566f-432a-92ca-b46cd712d784"
@@ -4639,7 +4828,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "b35cea42-69c7-4663-a7ff-050abd51675b"
@@ -4667,7 +4863,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "press",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "df6008b2-8717-4f32-b27e-75b0dc3b380a"
@@ -4926,7 +5135,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "15553091-3399-4472-aab5-4e33507dc76b"
@@ -6003,7 +6219,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "2fc10c44-7410-4aa4-b1df-449a6b9204aa"
@@ -6748,7 +6971,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "dcbb9c34-2a49-41b5-a7da-6c4407bdccb3"
@@ -7006,7 +7236,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "4379783c-5f8b-4f08-b501-eae1c462d1fe"
@@ -7104,7 +7341,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "petition",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "1fcaa390-531d-46bd-9691-afc9b59eff8f"
@@ -7331,7 +7581,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 1 提到敬謝噢，但公文不需要",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "f5ffbb00-d407-499b-b66e-91a909d08dfa"
@@ -7464,7 +7727,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "71f5891d-bf8c-4ebb-a6f9-19aa07b265e7"
@@ -7492,7 +7762,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "3074db61-44f8-4397-84ee-fcf6507f69bc"
@@ -7953,7 +8230,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "56b5f282-69da-4d6c-b182-8856d18c8b60"
@@ -7967,7 +8251,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "804f0b74-9111-476c-8312-73f019f4d180"
@@ -8338,7 +8629,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "6c5b6fb2-7949-4a13-8e4e-74033dfc97ae"
@@ -8435,7 +8733,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "57391d4a-d1d5-4b41-be93-8370eb2a0d11"
@@ -8960,7 +9265,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "petition",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "b2f59041-bfac-4eef-afb9-d470b76d39d7"
@@ -9002,7 +9320,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "8529fca7-1ae5-46e3-aa1c-dbe02f4cda6b"
@@ -9693,7 +10018,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "aafe9223-1c48-4388-b311-e40efa79f270"
@@ -10852,7 +11184,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "30a31e2d-89c6-4984-80bb-771991a365da"
@@ -10936,7 +11275,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "press",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "14615bd6-b23f-4bac-bc10-a73d3ddbdf70"
@@ -11020,7 +11372,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "d87855c7-11b6-4b78-87e1-96e709db0a7a"
@@ -11363,7 +11722,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "8039dc02-1adc-4138-95f2-a08920868626"
@@ -11622,7 +11988,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "od\n",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "eff2a1ff-c875-493d-88f5-d2e6f542facf"
@@ -11769,7 +12148,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "2f665065-9d3c-46d1-8875-5e915f6e5bc0"

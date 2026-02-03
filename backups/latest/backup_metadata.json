@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-02-03T16:42:11.311518",
+  "timestamp": "2026-02-03T22:42:14.923899",
   "dataset_name": "模型回答偏好選擇_整合",
   "total_records": 800,
-  "completed": 4,
-  "pending": 796,
+  "completed": 6,
+  "pending": 794,
   "records_exported": 800,
   "note": "Discarded responses are not exported (Argilla design limitation)"
 }
