@@ -22,7 +22,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "qa",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "50d27a28-97ed-40f6-8ddf-5ebdd2935bc6"
@@ -1008,7 +1021,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "1a589e12-9959-49ed-b16c-593de21db44b"
@@ -1566,7 +1586,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "分項標號均使用錯誤",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "2701ee40-22f8-4213-9a1f-a2d072d84a8f"
@@ -2720,7 +2753,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 1 使用了 %sample_response ",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "427f08a0-f1ed-4833-95f1-8d765beac02e"
@@ -2874,7 +2920,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "c376e189-172d-436d-8389-439f720a4349"
@@ -3049,7 +3102,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "8f8ff51f-a1ba-47a8-bbd9-4be8b421f44c"
@@ -3321,7 +3381,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "d87d8919-0e98-415c-a58d-8b4cbf1686ab"
@@ -3685,9 +3752,26 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        },
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "qa",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
-    "status": "pending",
+    "status": "completed",
     "_server_id": "53192da3-3626-4402-98b4-dff577d4e4f1"
   },
   {
@@ -3810,7 +3894,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "b31d6c45-ccb5-419a-9c58-151b02521db2"
@@ -4341,9 +4432,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        },
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
-    "status": "pending",
+    "status": "completed",
     "_server_id": "c10c7d82-ce87-4648-b677-7f7ba693e56c"
   },
   {
@@ -4908,7 +5010,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "863b1348-d7cb-493e-b235-88ffb72d8d48"
@@ -5271,7 +5380,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "9a8b83a6-5735-4c19-9a1d-828b4be3e051"
@@ -5674,7 +5790,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "都沒有提到「提到了國科會產學合作政策推動重點」",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "fd00463c-ad48-4f5b-a7b4-9588364a84d8"
@@ -5716,7 +5845,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "f68a4a42-9268-4f56-b812-7cbdc351b611"
@@ -6165,7 +6301,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "6191353a-fb02-4454-8a23-720066a4d062"
@@ -6389,7 +6532,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "但 response 0 公文格式錯誤",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "648a09dd-1d3b-46de-bc5b-c6d2e244ddf8"
@@ -6667,6 +6823,10 @@
         {
           "value": "resp_0_better",
           "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        },
+        {
+          "value": "resp_0_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
         }
       ],
       "reasoning": [
@@ -6677,7 +6837,7 @@
       ]
     },
     "vectors": {},
-    "status": "pending",
+    "status": "completed",
     "_server_id": "10b72746-72fe-4403-afdd-485d5a834550"
   },
   {
@@ -6731,9 +6891,26 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        },
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "press",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
-    "status": "pending",
+    "status": "completed",
     "_server_id": "56a31ce1-d2bc-47c1-a335-7b89dfa88aa5"
   },
   {
@@ -7050,7 +7227,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "press",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "eecdba5c-6b92-4e20-8665-8eda15a2c227"
@@ -7330,7 +7520,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "71619b14-5d04-410e-98ff-f2886f44cd58"
@@ -8078,7 +8275,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "7518262e-9e8d-42d0-bd88-dbd32ddf8a95"
@@ -10613,7 +10817,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "8dc59a8f-f1ef-403b-9f81-d6879af7458b"
