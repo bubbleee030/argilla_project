@@ -78,7 +78,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 0 的評語含有較多幻覺",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "c692f913-3783-411b-8423-d288eb053bf6"
@@ -848,7 +861,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "6b7fd66c-e527-4380-81c9-e0f4cdc4d652"
@@ -1002,7 +1022,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 1 有指出分項標號使用 *，且有提到 model_response 是民眾詢問的回覆非公文",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "d85e334d-d087-4d8c-956c-a83415a6a303"
@@ -1142,7 +1175,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "response 1 的分數較 response 0 合理",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "08c58afd-5b39-47e5-a5e5-b8d147b586cb"
@@ -1604,7 +1650,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "兩者一樣差",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "0390e32c-3cd4-4ffa-b86a-91af30939587"
@@ -1632,7 +1691,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "兩這都沒有發現分項標號使用錯誤",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "e31fb4f2-023b-4da1-88c1-df41455405c9"
@@ -1685,7 +1757,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "18715dd0-f5c3-4bba-8bae-23b2dc16f703"
@@ -1699,7 +1778,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "兩者均無發現分項標號使用錯誤，但 response 1 的評語中含有更多幻覺",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "dafb8058-abed-4088-b329-99a395814721"
@@ -1727,7 +1819,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "20562bcb-8bfa-410b-ab23-ff3cf434ac2d"
@@ -2511,7 +2610,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 0 有用到 範例(sample_response)",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "d202395d-da2e-4a13-aaee-c27550e23564"
@@ -2553,7 +2665,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "兩者都沒有發現分項標號有問題",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "b4d2d81f-32bf-45ba-acd2-74b9e6e4f278"
@@ -2777,7 +2902,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "324a5516-483c-4ddb-9c2a-9d0863df3513"
@@ -2959,7 +3091,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "91c37a71-7f41-4a0a-9d35-d840567e7aaa"
@@ -3141,7 +3280,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "兩者都沒有對分項標號有任何意見 ...",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "d8a7ace9-ab65-48cd-97b1-749ed8466d49"
@@ -3351,7 +3503,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "6bd4ab25-8acd-45cf-8e6d-ef250a2e0b15"
@@ -3477,7 +3636,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "008a4db4-8315-4819-a035-6b0ed2c46acd"
@@ -3617,7 +3783,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "兩者都沒有發現分項標號的錯誤 ...",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "dfdb2ee4-efc4-47f8-8642-542e1db24c16"
@@ -3645,7 +3824,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 0 有使用 %sample_response",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "45b314ce-dbef-4c97-846c-2821e751a3a2"
@@ -3659,7 +3851,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "a10b343a-cc6d-4a5c-a7e2-b031ba16e059"
@@ -4009,7 +4208,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "824745eb-cf1c-4d87-b1f3-783f91573e2b"
@@ -4597,7 +4803,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "ab20383b-d357-47e2-8ea7-3f8c1738e3c0"
@@ -4821,7 +5034,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 1 有用到 sample_response",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "1b99ee5f-a025-4cf6-af35-2740bcd62df7"
@@ -5059,7 +5285,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "f265b08d-5a3c-425d-95da-295ad0a5c454"
@@ -5185,7 +5418,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "02c5e562-05ab-450b-ad42-fee369eb39ff"
@@ -5890,7 +6130,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "7bacf5f6-9629-40e1-8a9a-bd5e204bb639"
@@ -6226,7 +6473,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "3baf1055-24e8-4ded-aa53-0726efde29a1"
@@ -6408,7 +6662,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 1 有提到 %sample_response ",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "10b72746-72fe-4403-afdd-485d5a834550"
@@ -6811,7 +7078,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "69573520-c845-439e-a37d-b5a566eb798b"
@@ -6895,7 +7169,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "edcadde7-2820-4b8d-ad06-a0d9c80021c7"
@@ -7105,7 +7386,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 0 內錯誤使用全形（",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "9164db91-dea9-478e-909f-2655a67f08b7"
@@ -7385,7 +7679,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "7040f404-2c7a-4e1b-839c-e23a02da2497"
@@ -7847,7 +8148,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "收文應該是\"局\"但公文內容用\"貴署\"，兩個評語都沒有發現這個錯誤",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "ea8a7282-1984-48c2-b6d7-bdfee2d04132"
@@ -8057,7 +8371,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "1c6b4aee-8a75-435d-ae2b-73883a544846"
@@ -8589,7 +8910,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "兩者對分項標號都沒指出問題",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "3e46e9fc-28e5-45af-bb17-3ca196747c48"
@@ -8673,7 +9007,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "文本格式不符合要求，但生成的文本符合該類文本格式。可再進行調整",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "a9c006a2-c370-4243-9d38-25520182c092"
@@ -9051,7 +9398,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "60cb42d4-c5ee-4bf0-b32d-4d2d2e913786"
@@ -9958,7 +10312,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "68bde12a-d18c-4a7d-805c-edee694efb78"
@@ -10756,7 +11117,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "be111bfc-2e84-4d2b-a8f0-112a551c3e6b"
@@ -10910,7 +11278,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "8dc56503-7566-4199-877b-f12c5aaa4c2d"
@@ -11092,7 +11467,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "849d073e-ebbf-4568-9623-3e4207ef9d90"
