@@ -826,7 +826,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "ead9d8d0-a157-4038-9922-f37f5e9468bc"
@@ -4486,7 +4493,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "97a7e99f-ad83-4da5-b135-6c8bcf145da1"
@@ -6441,7 +6455,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "84b1e3fc-8641-4de6-a903-82f88ff10232"
@@ -6879,9 +6900,30 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        },
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "qa",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        },
+        {
+          "value": "題文不符",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
-    "status": "pending",
+    "status": "completed",
     "_server_id": "0c608cda-c308-49fa-91fa-6c179326f883"
   },
   {
@@ -7284,7 +7326,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "4b9ad9ba-8c31-44f1-a19d-1b07dd389953"
@@ -7842,7 +7891,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "8a7fa23c-5828-4b2c-a127-3858fbd94560"
@@ -8637,7 +8693,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "30ed8721-869d-48da-ab5e-b31601294efa"
@@ -10400,7 +10463,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "4eb9b5fe-0fef-4533-a418-085274412d81"
@@ -10505,7 +10575,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "response 0 的分數太高了",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "e6375693-f92c-4029-9c3c-479dafd8e6c3"
@@ -10687,7 +10770,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "4d3216b9-f9c1-4ca2-85ff-a26d9667eb7b"
@@ -11123,6 +11213,10 @@
         {
           "value": "equal",
           "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        },
+        {
+          "value": "resp_0_better",
+          "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
         }
       ],
       "reasoning": [
@@ -11133,7 +11227,7 @@
       ]
     },
     "vectors": {},
-    "status": "pending",
+    "status": "completed",
     "_server_id": "98fbde44-112c-42d7-9042-dc9d73f8b38a"
   },
   {
@@ -11962,7 +12056,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "b350e660-46e2-43da-be82-fd8691a28e8b"
@@ -12263,7 +12364,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "2b74ec4f-9b96-4b36-819c-bae5f01ae9c0"
