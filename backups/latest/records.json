@@ -312,11 +312,15 @@
         {
           "value": "resp_0_better",
           "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        },
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
         }
       ]
     },
     "vectors": {},
-    "status": "pending",
+    "status": "completed",
     "_server_id": "7a36e011-05a0-4c82-a2ff-05ee7e6d1b51"
   },
   {
@@ -1457,11 +1461,21 @@
         {
           "value": "equal",
           "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        },
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "petition",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
         }
       ]
     },
     "vectors": {},
-    "status": "pending",
+    "status": "completed",
     "_server_id": "ba9bfc0f-a945-4b7d-ae91-8c647e79c191"
   },
   {
@@ -1770,11 +1784,21 @@
         {
           "value": "resp_0_better",
           "user_id": "4deef335-99ee-494d-97aa-70ca1ee42822"
+        },
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "以分數來看 Response 1 比較好\n",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
         }
       ]
     },
     "vectors": {},
-    "status": "pending",
+    "status": "completed",
     "_server_id": "471ab2ac-f2cd-4a8e-9b9c-3a8be2861bbd"
   },
   {
@@ -3337,7 +3361,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "f59bf2c6-2374-4653-8e0e-5ffa18886dc5"
@@ -4329,7 +4360,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "** 這題不要用 **\n\n",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "63bc4d68-6f32-4af6-89ed-f94ba82e20c5"
@@ -5100,7 +5144,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "c557992a-103d-485a-a877-2209b1450593"
@@ -5386,7 +5437,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "dc4b0d6c-7478-4731-8328-6872d0272b80"
@@ -5785,7 +5843,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "03aea45c-6c9e-411e-8d15-81682365d42c"
@@ -5799,7 +5864,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "6e82638a-4b2a-4198-af1c-21b4e8f5eae1"
@@ -7166,7 +7238,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "1ae5c028-1ba1-4622-9044-7e4236313c89"
@@ -8552,7 +8631,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "8c8179b2-0577-4010-a11d-544b8681c931"
@@ -9223,7 +9309,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "4c9098f3-3462-4352-8045-18956edf9c21"
@@ -9355,7 +9448,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "1a8b1ddf-4dba-4c8d-93dd-db0f44a7b62c"
@@ -9383,7 +9483,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "Response 0 使用了 新聞稿範例(sample_response)",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "6b1fb96c-f902-44bf-8754-66e7ecc3f85b"
@@ -9815,7 +9928,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "qa",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "36c31f71-d58f-4d18-b6f5-611c6499d9ba"
@@ -11645,7 +11771,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "0ed95044-7c56-4173-9d12-3b4bb5d5bc10"
