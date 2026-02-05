@@ -65,6 +65,7 @@ class DiscordNotifier:
             True if sent successfully, False otherwise
         """
         if not self.enabled:
+            logger.debug(f"Discord notifier disabled, skipping error notification: {title}")
             return False
         
         try:
@@ -93,11 +94,25 @@ class DiscordNotifier:
             
             payload = {"embeds": [embed]}
             
+            logger.debug(f"Sending Discord error notification...")
             response = requests.post(self.webhook_url, json=payload, timeout=10)
-            return response.status_code in (200, 204)
             
+            if response.status_code in (200, 204):
+                logger.info(f"✅ Discord notification sent successfully")
+                return True
+            else:
+                logger.error(f"Discord webhook returned status code: {response.status_code}")
+                logger.debug(f"Response: {response.text}")
+                return False
+            
+        except requests.exceptions.Timeout:
+            logger.error(f"❌ Discord webhook connection timeout (10s)")
+            return False
+        except requests.exceptions.ConnectionError as e:
+            logger.error(f"❌ Failed to connect to Discord webhook: {e}")
+            return False
         except Exception as e:
-            logger.error(f"Failed to send Discord notification: {e}")
+            logger.error(f"❌ Error sending Discord notification: {e}")
             return False
     
     def send_success(self, title: str, message: str) -> bool:
@@ -112,6 +127,7 @@ class DiscordNotifier:
             True if sent successfully, False otherwise
         """
         if not self.enabled:
+            logger.debug(f"Discord notifier disabled, skipping success notification: {title}")
             return False
         
         try:
@@ -133,11 +149,25 @@ class DiscordNotifier:
             
             payload = {"embeds": [embed]}
             
+            logger.debug(f"Sending Discord success notification...")
             response = requests.post(self.webhook_url, json=payload, timeout=10)
-            return response.status_code in (200, 204)
             
+            if response.status_code in (200, 204):
+                logger.info(f"✅ Discord notification sent successfully")
+                return True
+            else:
+                logger.error(f"Discord webhook returned status code: {response.status_code}")
+                logger.debug(f"Response: {response.text}")
+                return False
+            
+        except requests.exceptions.Timeout:
+            logger.error(f"❌ Discord webhook connection timeout (10s)")
+            return False
+        except requests.exceptions.ConnectionError as e:
+            logger.error(f"❌ Failed to connect to Discord webhook: {e}")
+            return False
         except Exception as e:
-            logger.error(f"Failed to send Discord notification: {e}")
+            logger.error(f"❌ Error sending Discord notification: {e}")
             return False
 
 

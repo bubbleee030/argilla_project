@@ -169,12 +169,12 @@ python3 scripts/auto_backup.py --once
 
 ### Schedule Every 2 Hours
 ```bash
-python3 scripts/auto_backup.py --schedule 120 &
+python3 scripts/auto_backup.py --schedule 120 
 ```
 
 ### Schedule Every 12 Hours
 ```bash
-python3 scripts/auto_backup.py --schedule 720 &
+python3 scripts/auto_backup.py --schedule 720 
 ```
 
 ### List All Backups
