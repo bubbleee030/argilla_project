@@ -8,7 +8,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "b9a74f52-6beb-44c6-ae68-ac02eb547d92"
@@ -278,7 +285,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "press",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "9804db55-3b57-4ffe-a910-54d406f036af"
@@ -1327,7 +1347,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "9af0e6d5-b5e0-465d-bb86-a3a0ba113c71"
@@ -2770,7 +2797,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "e7368491-db93-47a3-a70a-44cf2b461e61"
@@ -4901,7 +4935,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "qa",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "994f14d9-8fb0-467a-992e-0d5f06510fa8"
@@ -6047,7 +6094,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "680cf766-c71c-48db-88e4-2d8c721b3038"
@@ -6894,7 +6948,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "qa",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "2e5aa8c5-8015-4e4d-86dc-6619dda460b2"
@@ -7237,7 +7304,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "press",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "ab7c2a00-f7b5-4e60-87ce-a6cdad66b463"
@@ -7383,7 +7463,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_0_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "fbb91114-3045-448b-bcc9-c7449ab753df"
@@ -8569,7 +8656,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "a3dc74db-f250-432a-9b5e-90c70309e217"
@@ -10672,7 +10766,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "c76226a2-282a-4caa-8748-bc1aa685732c"
@@ -11560,7 +11661,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "22968be5-59ec-435b-8b4e-26dcf2182dc5"
@@ -12894,7 +13002,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "09898e84-ded9-4288-a0b0-cf20fcc26509"
