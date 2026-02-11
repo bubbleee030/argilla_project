@@ -1263,7 +1263,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "1b0175d8-d60b-42e1-af45-85aae6063094"
@@ -2163,7 +2170,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "press",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "5836afbf-5275-46e5-963b-c9e01171e691"
@@ -4851,7 +4871,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "77f2220d-aba1-4cd3-b632-71feaa26aaa0"
@@ -7206,7 +7233,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "resp_1_better",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "56b77899-3741-43e0-8deb-dd68c3d338ef"
@@ -8864,7 +8898,14 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "c28380ee-8e75-427c-9f25-22168f85139f"
@@ -11899,7 +11940,20 @@
     },
     "metadata": {},
     "suggestions": {},
-    "responses": {},
+    "responses": {
+      "preference_selection": [
+        {
+          "value": "equal",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ],
+      "reasoning": [
+        {
+          "value": "qa",
+          "user_id": "bd8c15d3-3cff-41f6-b3b0-0afb39b177e9"
+        }
+      ]
+    },
     "vectors": {},
     "status": "pending",
     "_server_id": "2c8057d2-40bc-4181-bf44-e62ca4d8f9f7"
