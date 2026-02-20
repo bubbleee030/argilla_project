@@ -2,9 +2,9 @@
   "guidelines": "請閱讀兩個回覆，然後在右側選擇您認為比較好的選項。",
   "questions": [
     {
-      "id": "142ffe94-4299-4c41-9692-3a492fc7e841",
-      "inserted_at": "2026-01-29T11:48:48.840495",
-      "updated_at": "2026-01-29T11:48:48.840495",
+      "id": "7a952e73-57fa-44a5-b815-ceb2af0a787e",
+      "inserted_at": "2026-02-20T09:04:20.279261",
+      "updated_at": "2026-02-20T09:04:20.279261",
       "name": "preference_selection",
       "settings": {
         "type": "label_selection",
@@ -30,13 +30,13 @@
       "title": "請問哪一個回答比較好？",
       "description": null,
       "required": true,
-      "dataset_id": "2f489fd8-555b-444c-8faa-976da46b71e6",
+      "dataset_id": "0ce8e6ab-b82a-4342-8989-c4b63f8be9a4",
       "type": "label_selection"
     },
     {
-      "id": "2b1d3d19-4388-4a4b-a205-843a090271c9",
-      "inserted_at": "2026-01-29T11:48:49.060417",
-      "updated_at": "2026-01-29T11:48:49.060417",
+      "id": "a9438c0c-b65f-449a-98a6-961462ab281d",
+      "inserted_at": "2026-02-20T09:04:20.512850",
+      "updated_at": "2026-02-20T09:04:20.512850",
       "name": "reasoning",
       "settings": {
         "type": "text",
@@ -45,15 +45,15 @@
       "title": "為什麼？(選填)",
       "description": null,
       "required": false,
-      "dataset_id": "2f489fd8-555b-444c-8faa-976da46b71e6",
+      "dataset_id": "0ce8e6ab-b82a-4342-8989-c4b63f8be9a4",
       "type": "text"
     }
   ],
   "fields": [
     {
-      "id": "a6d2954b-424e-488b-8ad9-6135d972b5ec",
-      "inserted_at": "2026-01-29T11:48:48.159177",
-      "updated_at": "2026-01-29T11:48:48.159177",
+      "id": "c56cfb8a-1724-47fe-b4f4-59b633253833",
+      "inserted_at": "2026-02-20T09:04:19.544658",
+      "updated_at": "2026-02-20T09:04:19.544658",
       "name": "prompt",
       "settings": {
         "type": "text",
@@ -62,13 +62,13 @@
       "title": "模型收到的提示 (Prompt)",
       "required": true,
       "description": null,
-      "dataset_id": "2f489fd8-555b-444c-8faa-976da46b71e6",
+      "dataset_id": "0ce8e6ab-b82a-4342-8989-c4b63f8be9a4",
       "type": "text"
     },
     {
-      "id": "b8a2c3f9-8a44-49f0-bfc3-76ca78ad9698",
-      "inserted_at": "2026-01-29T11:48:48.387503",
-      "updated_at": "2026-01-29T11:48:48.387503",
+      "id": "3251e90e-3c70-45a4-a4e9-b8a30324f86d",
+      "inserted_at": "2026-02-20T09:04:19.775358",
+      "updated_at": "2026-02-20T09:04:19.775358",
       "name": "response_0",
       "settings": {
         "type": "text",
@@ -77,13 +77,13 @@
       "title": "response_0",
       "required": true,
       "description": null,
-      "dataset_id": "2f489fd8-555b-444c-8faa-976da46b71e6",
+      "dataset_id": "0ce8e6ab-b82a-4342-8989-c4b63f8be9a4",
       "type": "text"
     },
     {
-      "id": "51bea05b-e8ca-489d-a86f-06589ff6dd52",
-      "inserted_at": "2026-01-29T11:48:48.616923",
-      "updated_at": "2026-01-29T11:48:48.616923",
+      "id": "3e614b33-8f7c-427b-a11d-e8fed4438c6e",
+      "inserted_at": "2026-02-20T09:04:20.044439",
+      "updated_at": "2026-02-20T09:04:20.044439",
       "name": "response_1",
       "settings": {
         "type": "text",
@@ -92,7 +92,7 @@
       "title": "response_1",
       "required": true,
       "description": null,
-      "dataset_id": "2f489fd8-555b-444c-8faa-976da46b71e6",
+      "dataset_id": "0ce8e6ab-b82a-4342-8989-c4b63f8be9a4",
       "type": "text"
     }
   ],
