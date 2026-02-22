@@ -1,0 +1,15 @@
+{
+  "id": "62d72244-0e80-4aa6-bc21-c6a7ae5f1fb7",
+  "inserted_at": "2025-12-24T08:32:15.778028",
+  "updated_at": "2025-12-24T08:32:17.414685",
+  "name": "模型回答偏好選擇_整合",
+  "status": "ready",
+  "guidelines": "請閱讀兩個回覆，然後在右側選擇您認為比較好的選項。",
+  "allow_extra_metadata": false,
+  "distribution": {
+    "strategy": "overlap",
+    "min_submitted": 3
+  },
+  "workspace_id": "f0890ec1-8401-4a1b-bd0f-51c7318ea1b6",
+  "last_activity_at": "2025-12-24T08:32:17.414685"
+}

@@ -4,13 +4,13 @@ import argilla as rg
 import json
 
 # --- 1. 請填入您的個人資訊 ---
-API_URL = "https://argilla.your-domain.com"  # 請將此處替換為您的 Argilla 伺服器 URL
-API_KEY = "YOUR_API_KEY_HERE"  # 請將此處替換為您的 Argilla API Key
+API_URL = "https://bubble030-test-argilla.hf.space"  # 請將此處替換為您的 Argilla 伺服器 URL
+API_KEY = "0gAM-17abmG8GIh1gHJlzzzbT-dt04jm3X7TGHvJgEIcFMTkLnoYf3Cm8Z723HH41QSWk7btB6PBx13z6bI6rnCC3TBvT4QlHMktzhrC0oo"  # 請將此處替換為您的 Argilla API Key
 
 # --- 2. 請填入您的資料設定 ---
 # 再次建議：使用一個全新的、乾淨的資料集名稱，以確保不會讀到舊的、有問題的設定
-DATASET_NAME = "PREFERENCE_DATASET_NAME" # 請設定您的資料集名稱
-DATA_FILE_PATH = "OUTPUT_JSONL_PATH" # 請確認資料路徑, upload 前請先執行 prepare_argilla.py 進行轉檔
+DATASET_NAME = "模型回答偏好選擇_整合" # 請設定您的資料集名稱
+DATA_FILE_PATH = "/home/ubuntu/argilla_project/data/argilla_ready_jsonl/argilla_ready_mix_tem0.87_p0.95_shuffled.jsonl" # 請確認資料路徑, upload 前請先執行 prepare_argilla.py 進行轉檔
 MAX_RESPONSES = 2 # 請設定每個 prompt 的最大回覆數量 (與 prepare_argilla.py 保持一致)
 
 # --- 程式主體開始 ---
@@ -47,7 +47,7 @@ try:
             )
         ],
         guidelines="請閱讀兩個回覆，然後在右側選擇您認為比較好的選項。",
-        distribution=rg.TaskDistribution(min_submitted=3) # 每個紀錄至少需要 3 個標註者完成標註
+        distribution=rg.TaskDistribution(min_submitted=2) # 每個紀錄至少需要 2 個標註者完成標註
     )
     print("📑 資料集設定 (Settings) 已定義完成。")
 

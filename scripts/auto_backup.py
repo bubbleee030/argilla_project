@@ -757,7 +757,7 @@ def main():
     )
     parser.add_argument(
         '--api-key',
-        default=os.getenv('ARGILLA_API_KEY', '0KQy1XjHdNK35xRz4Tk6AQZ8lrw1TB8EEo8VCubfSa4JQnWhn50jBSwE44gTCvWSv7QBdYzRDaNcEzpPuoSjQ4Erf47sMk31b5GnT1DkqvM'),
+        default=os.getenv('ARGILLA_API_KEY', '0gAM-17abmG8GIh1gHJlzzzbT-dt04jm3X7TGHvJgEIcFMTkLnoYf3Cm8Z723HH41QSWk7btB6PBx13z6bI6rnCC3TBvT4QlHMktzhrC0oo'),
         help='Argilla API key (or set ARGILLA_API_KEY env var)'
     )
     parser.add_argument(
