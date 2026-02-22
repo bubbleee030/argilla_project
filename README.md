@@ -10,7 +10,7 @@
 | **用途** | 大語言模型回答質量評估與偏好判斷 |
 | **標註資料量** | 超過 100,000+ 筆記錄 |
 | **部署方式** | Hugging Face Spaces + Docker + GitLab |
-| **版本控制** | Git LFS 支持大文件管理 |
+| **版本控制** | Git LFS 支援大文件管理 |
 | **技術棧** | Python, Docker, Argilla API, JSON/JSONL |
 
 ## 核心功能
