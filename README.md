@@ -1,103 +1,51 @@
-# Argilla 資料標註平台 | Data Annotation Project
+# argilla_project: pairwise preference annotation for LLM responses
 
-> **LLM 智慧評估與人工標註平台** | 完整的眾包標註系統
+**English** · [Annotator manual (繁體中文)](docs/ANNOTATOR_MANUAL.zh-TW.md)
 
-## 項目概況
+A small toolkit for running a human preference-labelling study on [Argilla](https://argilla.io),
+hosted on Hugging Face Spaces. Annotators see a prompt and two model responses and choose the
+better one (or "equally good / equally bad"), with an optional free-text reason.
 
-| 項目 | 詳情 |
-|------|------|
-| **平台** | Argilla - 開源 LLM 數據標註平台 |
-| **用途** | 大語言模型回答質量評估與偏好判斷 |
-| **標註資料量** | 超過 100,000+ 筆記錄 |
-| **部署方式** | Hugging Face Spaces + Docker + GitLab |
-| **版本控制** | Git LFS 支援大文件管理 |
-| **技術棧** | Python, Docker, Argilla API, JSON/JSONL |
+The exports feed the preference data used elsewhere in this work. `sft_project` has converters
+from Argilla exports to DPO pairs and to a judge test set.
 
-## 核心功能
+## What it does
 
-- **A/B 測試評估**：標註者比較兩個 LLM 的回答質量
-- **多選題標註**：支援答案偏好、風險識別、內容分類
-- **自動備份系統**：定時備份標註數據到 GitLab
-- **資料導出**：支援 JSON、CSV 等多種格式
-- **權限管理**：多用戶系統，支援不同角色權限
-- **即時進度追蹤**：清晰的標註進度及統計報表
+| Stage | Script | Notes |
+|---|---|---|
+| Prepare | `scripts/prepare_argilla.py` | Long-format model outputs to wide format: one row per prompt, several responses. |
+| Upload | `scripts/upload_argilla.py`, `scripts/upload_dataset_with_records.py` | Creates the dataset and its questions, then uploads the records. |
+| Users | `scripts/create_user.py` | Creates annotator accounts and adds them to a workspace. |
+| Monitor | `scripts/check_progress.py` | Annotation progress. |
+| Export | `scripts/export_dataset.py` | JSON / CSV export for downstream training. |
+| Backup | `scripts/auto_backup.py`, `scripts/backup.sh` | See below. |
 
----
+## Why the backup system exists
 
-# Argilla 資料標註平台使用手冊(Annotator Manual)
+A free Hugging Face Space sleeps and can be deleted after 36 hours of inactivity, and that would
+take the annotations with it. `auto_backup.py` protects against that:
 
-## 1. 簡介
-歡迎使用 Argilla 標註平台！本手冊將引導您如何登入系統，並針對我們的專案資料進行評估與標註。您的標註結果將直接幫助我們改善模型的回覆品質。
+- writes a new backup only when the content changed, not when a timestamp did
+- commits each backup to Git, keeps the last N backups, and cleans up after a failed run
+- sends a Discord notification on success or failure
+- keeps Chinese text intact (UTF-8 throughout)
 
-## 2. 登入系統
+One limitation, recorded in the backup metadata: Argilla does not export discarded responses.
+`BUG_FIX_HASH_DETECTION.md` documents a change-detection bug found and fixed along the way.
 
-1.  **前往標註平台網址**：
-    *   請點擊專案負責人提供的網址: https://bubble030-test-argilla.hf.space
-    
-2.  **登入帳號**：
-    *  點擊下方的 **"Enter your username and password"**，輸入管理員分配給您的：
-        *   **Username (使用者名稱)**
-        *   **Password (密碼)**
-    ![image](https://hackmd.io/_uploads/rkKgPBb--g.png)
+## Data
 
+The repository contains a snapshot of 800 records (standard and adversarial model outputs,
+mixed and shuffled) under `data/` and `backups/latest/`.
 
+## Setup
 
+```bash
+pip install -r requirements.txt
+cp .env.template .env        # Argilla URL and API key
+python scripts/prepare_argilla.py
+python scripts/upload_argilla.py
+bash scripts/backup.sh backup
+```
 
-    *(註：若登入後出現 Unauthorized 錯誤，請嘗試重新整理頁面或再登入一次。)*
-
-3.  **選擇工作區 (Workspace)**：
-    *   登入後，您會看到左側選單。請確認您位於正確的 **Workspace**（例如：argilla）。
-
-## 3. 開始標註任務
-![image](https://hackmd.io/_uploads/rydMdSWbZx.png)
-
-### 3.1 選擇資料集
-在首頁列表中，點選本次任務指定的資料集名稱（例如：`模型回答偏好選擇-matched`）。
-
-### 3.2 標註介面說明
-進入資料集後，您會看到如下的畫面配置：
-
-*   **左側/中央區域 (Fields)**：這裡是您需要閱讀的內容。
-    *   **Prompt (提示)**：模型收到的指令或問題。
-    *   **Response (回覆)**：模型生成的回答內容（可能有 Response_0, Response_1 等多個回答）。
-    
-*   **右側區域 (Questions)**：這裡是您需要填寫的回饋。
-    *   **表單/選項**：根據專案設定，可能是單選題、多選題、評分 (1-5星) 或文字輸入框。(這裡是單選題)
-    *   **Submit (提交)**：完成該筆資料標註後按此按鈕。
-    *   **Draft（草稿）**：由於按下submit會自動跳至下一題，故若選擇一個答案後還想思考一下，建議可先按Draft。
-    *   **Discard (捨棄)**：如果該筆資料有嚴重問題無法標註，可按此跳過。(請先隨便選擇一個選項後再按下Discard)
-
-### 3.3 標註操作步驟 (範例：A/B 測試)
-
-本次任務的目標是判斷模型回答的優劣，請依照以下步驟進行：
-
-1.  **仔細閱讀 Prompt**：確認使用者的意圖是什麼。
-2.  **比較 Response 0 與 Response 1**：
-    *   閱讀兩個模型生成的回答。
-    *   檢查內容的正確性、流暢度、以及是否完整回答了問題。
-3.  **進行選擇 (右側面板)**：
-    *   如果 Response 0 比較好，請選擇 **"Response 0 比較好"**。
-    *   如果 Response 1 比較好，請選擇 **"Response 1 比較好"**。
-    *   如果兩者程度相當（一樣好或一樣爛），請選擇 **"兩個一樣好 / 一樣差"**。
-4.  **填寫原因 (選填)**：
-    *   如果發現模型有嚴重錯誤（如幻覺、有害內容），請在文字框簡單說明原因。
-5.  **提交**：
-    *   確認無誤後，點擊右下角的 **"Submit"** 按鈕。
-    *   系統會自動跳轉到下一筆資料。
-
-## 4. 常見問題 (FAQ)
-
-**Q: 如果我覺得兩個回答都很爛怎麼辦？**
-A: 請選擇「兩個一樣好 / 一樣差」，並建議在備註欄位寫下「皆未回答到重點」或具體缺點。
-
-**Q: 我標註到一半需要離開，進度會不見嗎？**
-A: 已按下 "Submit" 的資料都會被儲存。如果您在某一筆資料上操作到一半未提交就關閉視窗，該筆資料的標註將不會保存，下次進來會重新開始該筆資料。
-
-**Q: 發現資料顯示亂碼或格式錯誤怎麼辦？**
-A: 請按下 **"Discard"** 跳過該筆資料，並回報給專案管理員。
-
-**Q: 可以修改已經 Submit 的資料嗎？**
-A: 只要重新整理頁面，切換過濾器狀態到 "Submitted"，您就可以回頭查看並修改之前的標註紀錄。
-
----
-*若有任何帳號或系統問題，請聯繫專案負責人。*
+Read `Manual_Developer.md` for the full workflow and `QUICK_START_BACKUP.md` for the backup setup.
